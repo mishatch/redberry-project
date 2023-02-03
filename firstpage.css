@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background-image: url(shutterstock_2189773743\ 1.png);
+  background-image: url(images/shutterstock_2189773743\ 1.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -62,4 +62,7 @@ body {
 .mid-logo {
   margin-left: 116px;
   margin-top: 164px;
+}
+.resume {
+  z-index: 1;
 }
