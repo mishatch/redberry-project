@@ -2,4 +2,5 @@
 const loadFile = function (event) {
   const output = document.getElementById("preview");
   output.src = URL.createObjectURL(event.target.files[0]);
+  output.style.display = "block";
 };
