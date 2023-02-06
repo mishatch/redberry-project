@@ -124,9 +124,11 @@ label {
 }
 #valid-icon {
   width: 17px;
+  display: none;
 }
 #non-valid-icon {
   width: 21px;
+  display: none;
 }
 .valid-icon-name,
 .valid-icon-surname {
@@ -159,7 +161,7 @@ input[type="file"] {
   margin-left: 150px;
 }
 .upload-btn {
-  margin-left: 54px;
+  margin-left: 19px;
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 400;
@@ -183,9 +185,9 @@ input[type="file"] {
 .text {
   display: flex;
   flex-direction: column;
+  width: ;
 }
 .live-name {
-  margin-top: 68px;
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 700;
@@ -213,6 +215,7 @@ input[type="file"] {
 }
 .email-icon {
   margin-top: 4px;
+  display: none;
 }
 .mobile-number {
   display: flex;
@@ -321,9 +324,116 @@ input[type="file"] {
 
   width: 798px;
   height: 48px;
-
+  margin-top: 8px;
   background: #ffffff;
   border: 1px solid #bcbcbc;
   border-radius: 4px;
   padding-left: 16px;
+}
+.mobile-number-description {
+  margin-top: 8px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2e2e2e;
+}
+.next-page-btn-div {
+  display: flex;
+}
+.next-page-btn {
+  width: 151px;
+  height: 48px;
+  background: #6b40e3;
+  border-radius: 4px;
+  border: none;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+}
+.next-page {
+  margin-left: auto;
+  margin-right: 150px;
+  margin-top: 160px;
+}
+.valid-icon-email {
+  position: absolute;
+  transform: translate(766px, 210px);
+}
+.decline-email-icon {
+  position: absolute;
+  transform: translate(815px, 210px);
+}
+.valid-icon-number {
+  position: absolute;
+  transform: translate(766px, 345px);
+}
+.decline-number-icon {
+  position: absolute;
+  transform: translate(815px, 345px);
+}
+.about-person-heading-live {
+  margin-top: 34px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}
+.about-person-description-live {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 138% */
+
+  text-transform: lowercase;
+
+  color: #000000;
+  margin-top: 15px;
+}
+.paragraph {
+  width: 420px;
+}
+.about-person-line {
+  width: 662px;
+  height: 0px;
+  right: 80px;
+  top: 341px;
+  display: none;
+  border: 1px solid #c8c8c8;
+  margin-top: 19px;
+  margin-left: 80px;
+}
+.phone-icon {
+  display: none;
+}
+.live-username {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 68px;
+  gap: 20px;
+  max-width: 100%;
+}
+.live-surname {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  /* identical to box height */
+
+  color: #f93b1d;
 }
