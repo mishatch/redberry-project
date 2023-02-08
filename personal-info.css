@@ -186,7 +186,6 @@ input[type="file"] {
 .text {
   display: flex;
   flex-direction: column;
-  width: ;
 }
 .live-name {
   font-family: "Helvetica Neue";

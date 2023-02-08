@@ -1,0 +1,618 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("Fonts/HelveticaNeue-01.ttf");
+  src: url("Fonts/HelveticaNeue-Medium-11.ttf");
+}
+.experience-input {
+  width: 1098px;
+  background: whitesmoke;
+  height: 100vh;
+}
+.about-person {
+  margin-left: 80px;
+  display: flex;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+}
+.live-name {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}
+.email {
+  display: flex;
+  margin-top: 17px;
+}
+.email-info {
+  margin-left: 12px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  /* off black */
+
+  color: #1a1a1a;
+}
+.email-icon {
+  margin-top: 4px;
+  display: none;
+}
+.mobile-number {
+  display: flex;
+  margin-top: 10px;
+}
+.number {
+  margin-left: 12px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  /* off black */
+
+  color: #1a1a1a;
+}
+.pfp {
+  width: 246px;
+  height: 246px;
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: 75px;
+}
+#preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: none;
+}
+.about-you {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 150px;
+}
+.about-u {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.about-you-input {
+  margin-top: 8px;
+  box-sizing: border-box;
+
+  width: 798px;
+  height: 103px;
+
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 70px;
+  padding-left: 16px;
+}
+.mail {
+  margin-top: 33px;
+}
+.email-example {
+  box-sizing: border-box;
+
+  width: 798px;
+  height: 48px;
+
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.email-description {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 8px;
+  color: #2e2e2e;
+}
+.mobile-number-label {
+  margin-top: 29px;
+}
+.mobile-number-input {
+  box-sizing: border-box;
+
+  width: 798px;
+  height: 48px;
+  margin-top: 8px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  padding-left: 16px;
+}
+.mobile-number-description {
+  margin-top: 8px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2e2e2e;
+}
+.next-page-btn-div {
+  display: flex;
+}
+.next-page-btn {
+  width: 151px;
+  height: 48px;
+  background: #6b40e3;
+  border-radius: 4px;
+  border: none;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+}
+.next-page {
+  margin-left: auto;
+  margin-right: 150px;
+  margin-top: 160px;
+}
+.valid-icon-email {
+  position: absolute;
+  transform: translate(766px, 210px);
+}
+.decline-email-icon {
+  position: absolute;
+  transform: translate(815px, 210px);
+}
+.valid-icon-number {
+  position: absolute;
+  transform: translate(766px, 345px);
+}
+.decline-number-icon {
+  position: absolute;
+  transform: translate(815px, 345px);
+}
+.about-person-heading-live {
+  margin-top: 34px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}
+.about-person-description-live {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 138% */
+
+  text-transform: lowercase;
+
+  color: #000000;
+  margin-top: 15px;
+}
+.paragraph {
+  width: 420px;
+}
+.about-person-line {
+  width: 662px;
+  height: 0px;
+  right: 80px;
+  top: 341px;
+  display: block;
+  border: 1px solid #c8c8c8;
+  margin-top: 19px;
+  margin-left: 80px;
+}
+.phone-icon {
+  display: none;
+}
+.live-username {
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 68px;
+  gap: 20px;
+  max-width: 100%;
+}
+.live-surname {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}
+.header {
+  display: flex;
+  margin-left: 78px;
+  margin-top: 45px;
+}
+.vector {
+  width: 12px;
+}
+.experience-information {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: 61px;
+  /* off black */
+
+  color: #1a1a1a;
+}
+.vector-link {
+  margin-top: 9px;
+}
+.pages-numeration-2 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+
+  text-align: right;
+
+  /* off black */
+
+  color: #1a1a1a;
+  margin-left: auto;
+  margin-top: 4px;
+  margin-right: 149px;
+}
+.header-line {
+  width: 72.67%;
+  margin-left: 150px;
+  margin-top: 12px;
+  border: 1px solid #1a1a1a;
+  height: 0px;
+}
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 77px;
+}
+.experience-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.position-label {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+.position {
+  box-sizing: border-box;
+  margin-top: 8px;
+  width: 798px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.position-description {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2e2e2e;
+  margin-top: 8px;
+}
+.employer-label {
+  margin-top: 31px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+.employer-input {
+  box-sizing: border-box;
+  margin-top: 8px;
+  width: 798px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.employer-description {
+  width: 798px;
+  height: 21px;
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 8px;
+  color: #2e2e2e;
+}
+.working-date {
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  margin-top: 31px;
+}
+.start-date,
+.end-date {
+  display: flex;
+  flex-direction: column;
+}
+.start-date-input,
+.end-date-input {
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 371px;
+  height: 48px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+.start-date-label,
+.end-date-label {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+#accept-icon {
+  width: 17px;
+  position: absolute;
+  display: none;
+}
+#decline-icon {
+  width: 21px;
+  position: absolute;
+  display: none;
+}
+.position-accept-icon {
+  transform: translate(765px, 45px);
+}
+.position-decline-icon {
+  transform: translate(810px, 45px);
+}
+.employer-accept-icon {
+  transform: translate(765px, 183px);
+}
+.employer-decline-icon {
+  transform: translate(810px, 183px);
+}
+.description-label {
+  margin-top: 33px;
+
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+.description-input {
+  box-sizing: border-box;
+
+  width: 798px;
+  height: 123px;
+
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 16px;
+  padding-bottom: 90px;
+}
+.experience-input-line {
+  width: 798px;
+  height: 0px;
+  left: 149px;
+  top: 759px;
+
+  border: 1px solid #c1c1c1;
+  margin-top: 58px;
+  margin-left: 150px;
+}
+.add-experience {
+  width: 289px;
+  height: 48px;
+  margin-left: 150px;
+  margin-top: 45px;
+  background: #62a1eb;
+  border: none;
+  border-radius: 4px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.add-experience:hover {
+  cursor: pointer;
+}
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 115px;
+}
+.back,
+.next {
+  width: 151px;
+  height: 48px;
+  right: 972px;
+  bottom: 65px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: #6b40e3;
+  border-radius: 4px;
+  border: none;
+}
+.back,
+.next:hover {
+  cursor: pointer;
+}
+.back {
+  margin-left: 150px;
+}
+.next {
+  margin-right: 150px;
+}
+.experience-person-div-live {
+  margin-left: 80px;
+  margin-top: 24px;
+  width: 622px;
+}
+.live-reload {
+  width: 822px;
+}
+.experience-heading-live {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #f93b1d;
+}
+.experience-live {
+  display: flex;
+  gap: 7px;
+  margin-top: 15px;
+}
+.position-live,
+.employer-live {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  /* off black */
+
+  color: #1a1a1a;
+}
+.date-live {
+  margin-top: 7px;
+  font-family: "Helvetica Neue";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #919191;
+}
+.experience-description-live {
+  margin-top: 16px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 138% */
+
+  text-transform: capitalize;
+
+  color: #000000;
+}

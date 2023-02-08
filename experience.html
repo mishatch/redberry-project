@@ -4,7 +4,128 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>გამოცდილება</title>
+    <link rel="stylesheet" href="experience.css" />
   </head>
-  <body></body>
+  <body>
+    <section class="experience-input">
+      <div class="header">
+        <a href="index.html" class="vector-link"
+          ><img src="images/Vector.png" alt="Go to start page" class="vector"
+        /></a>
+        <h1 class="experience-information">გამოცდილება</h1>
+        <p class="pages-numeration-2">2/3</p>
+      </div>
+      <hr class="header-line" />
+      <div class="input">
+        <form class="experience-form">
+          <label for="position" class="position-label">თანამდებობა</label>
+          <input
+            type="text"
+            class="position"
+            placeholder="დეველოპერი, დიზაინერი, ა.შ."
+          />
+          <p class="position-description">მინიმუმ 2 სიმბოლო</p>
+          <img
+            src="images/accept-icon.png"
+            alt="Accept"
+            class="position-accept-icon"
+            id="accept-icon"
+          />
+          <img
+            src="images/decline-icon.png"
+            alt="Decline"
+            class="position-decline-icon"
+            id="decline-icon"
+          />
+          <label for="employer" class="employer-label">დამსაქმებელი</label>
+          <input
+            type="text"
+            class="employer-input"
+            placeholder="დამსაქმებელი"
+          />
+          <p class="employer-description">მინიმუმ 2 სიმბოლო</p>
+          <img
+            src="images/accept-icon.png"
+            alt="Accept"
+            class="employer-accept-icon"
+            id="accept-icon"
+          />
+          <img
+            src="images/decline-icon.png"
+            alt="Decline"
+            class="employer-decline-icon"
+            id="decline-icon"
+          />
+          <div class="working-date">
+            <div class="start-date">
+              <label for="start-date-input" class="start-date-label"
+                >დაწყების რიცხვი</label
+              >
+              <input type="date" class="start-date-input" />
+            </div>
+            <div class="end-date">
+              <label for="end-date-input" class="end-date-label"
+                >დამთავრების რიცხვი</label
+              >
+              <input type="date" class="end-date-input" />
+            </div>
+          </div>
+          <label for="description-input" class="description-label"
+            >აღწერა</label
+          >
+          <input
+            type="text"
+            class="description-input"
+            placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+          />
+        </form>
+        <hr class="experience-input-line" />
+      </div>
+      <button class="add-experience">მეტი გამოცდილების დამატება</button>
+      <div class="navigation-buttons">
+        <a href="personal-info.html" class="back-link"
+          ><button class="back">უკან</button></a
+        >
+        <button class="next">შემდეგი</button>
+      </div>
+    </section>
+    <section class="live-reload">
+      <div class="about-person">
+        <div class="text">
+          <div class="live-username">
+            <h1 class="live-name"></h1>
+            <h1 class="live-surname"></h1>
+          </div>
+          <div class="email">
+            <img src="images/email-logo.png" alt="Email" class="email-icon" />
+            <p class="email-info"></p>
+          </div>
+          <div class="mobile-number">
+            <img src="images/phone-logo.png" alt="Phone" class="phone-icon" />
+            <p class="number"></p>
+          </div>
+          <h6 class="about-person-heading-live"></h6>
+
+          <div class="paragraph">
+            <p class="about-person-description-live"></p>
+          </div>
+        </div>
+        <div class="pfp">
+          <img id="preview" src="" />
+        </div>
+      </div>
+      <hr class="about-person-line" />
+      <div class="experience-person-div-live">
+        <h6 class="experience-heading-live"></h6>
+        <div class="experience-live">
+          <p class="position-live"></p>
+          <p class="employer-live"></p>
+        </div>
+        <p class="date-live"></p>
+        <p class="experience-description-live"></p>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
