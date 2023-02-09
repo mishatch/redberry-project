@@ -11,6 +11,11 @@ if (localStorage.getItem("userPicture")) {
   pictureOutput.src = localStorage.getItem("userPicture");
   pictureOutput.style.display = "block";
 }
+let defaultInputStyle;
+const defaultInputs = function () {
+  defaultInputStyle = 1;
+  localStorage.setItem("defaultInput", defaultInputStyle);
+};
 if (location.pathname === "/redberry-project/personal-info.html") {
   // constant variables for input values
   const username = document.querySelector(".name-input");
@@ -43,37 +48,92 @@ if (location.pathname === "/redberry-project/personal-info.html") {
   const declineNumberInput = document.querySelector(".decline-number-icon");
   const telephoneIcon = document.querySelector(".phone-icon");
 
+  //variables which checks user's inputs and if user can go on next page
+  let isNameValid;
+  let isSurnameValid;
+  let isNumberValid;
+  let isEmailValid;
+  const nextPage = document.querySelector(".next-page");
   // function which displays name and surname on resume
-  const displayInput = function (inputName, textContentName, a) {
-    inputName.addEventListener("input", function () {
-      localStorage.setItem(a, inputName.value);
-      textContentName.textContent = inputName.value;
-    });
-    if (localStorage.getItem(a)) {
-      inputName.value = localStorage.getItem(a);
-      textContentName.textContent = inputName.value;
+  surname.addEventListener("input", function () {
+    localStorage.setItem("surname", surname.input);
+    surnameLive.textContent = surname.value;
+  });
+  if (localStorage.getItem("surname")) {
+    surname.value = localStorage.getItem("surname");
+    surnameLive.textContent = surname.value;
+  }
+  username.addEventListener("input", function () {
+    const counter = username.value.replace(/[^ა-ჰ]/g, "").length;
+    let regExp = /^[\u10A0-\u10FF]+$/;
+    localStorage.setItem("Username", username.value);
+    liveUsername.textContent = username.value;
+    localStorage.setItem("regExpName", !regExp.test(this.value));
+    if (counter < 2 || !regExp.test(this.value)) {
+      declineNameInput.style.display = "block";
+      acceptNameInput.style.display = "none";
+      username.style.outline = "1px solid #EF5050";
+      isNameValid = false;
+    } else {
+      acceptNameInput.style.display = "block";
+      declineNameInput.style.display = "none";
+      username.style.outline = "1px solid #98E37E";
+      isNameValid = true;
     }
-  };
+  });
+  if (localStorage.getItem("Username")) {
+    username.value = localStorage.getItem("Username");
+    liveUsername.textContent = username.value;
+  }
+  const counterName = username.value.replace(/[^ა-ჰ]/g, "").length;
+  let regExpName = /^[\u10A0-\u10FF]+$/;
+  if (counterName < 2 || !regExpName.test(username.value)) {
+    declineNameInput.style.display = "block";
+    acceptNameInput.style.display = "none";
+    username.style.outline = "1px solid #EF5050";
+    isNameValid = false;
+  } else {
+    acceptNameInput.style.display = "block";
+    declineNameInput.style.display = "none";
+    username.style.outline = "1px solid #98E37E";
+    isNameValid = true;
+  }
 
   // function which checks if user's name and surname input values are valid
-  const validationGeoLetter = function (inputValue, accept, decline) {
-    inputValue.addEventListener("input", function () {
-      const counter = inputValue.value.replace(/[^ა-ჰ]/g, "").length;
-      let regExp = /^[\u10A0-\u10FF]+$/;
-      localStorage.setItem("regExpName", !regExp.test(this.value));
-      if (counter < 2 || !regExp.test(this.value)) {
-        decline.style.display = "block";
-        accept.style.display = "none";
-        inputValue.style.outline = "1px solid #EF5050";
-      } else {
-        accept.style.display = "block";
-        decline.style.display = "none";
-        inputValue.style.outline = "1px solid #98E37E";
-      }
-    });
-  };
-  validationGeoLetter(username, acceptNameInput, declineNameInput);
-  validationGeoLetter(surname, acceptSurnameInput, declineSurnameInput);
+  surname.addEventListener("input", function () {
+    const counter = surname.value.replace(/[^ა-ჰ]/g, "").length;
+    let regExp = /^[\u10A0-\u10FF]+$/;
+    localStorage.setItem("surname", surname.value);
+    surnameLive.textContent = surname.value;
+    if (counter < 2 || !regExp.test(this.value)) {
+      declineSurnameInput.style.display = "block";
+      acceptSurnameInput.style.display = "none";
+      surname.style.outline = "1px solid #EF5050";
+      isSurnameValid = false;
+    } else {
+      acceptSurnameInput.style.display = "block";
+      declineSurnameInput.style.display = "none";
+      surname.style.outline = "1px solid #98E37E";
+      isSurnameValid = true;
+    }
+  });
+  if (localStorage.getItem("surname")) {
+    surname.value = localStorage.getItem("surname");
+    surnameLive.textContent = surname.value;
+  }
+  const counterSurname = surname.value.replace(/[^ა-ჰ]/g, "").length;
+  let regExpSurname = /^[\u10A0-\u10FF]+$/;
+  if (counterSurname < 2 || !regExpSurname.test(surname.value)) {
+    declineSurnameInput.style.display = "block";
+    acceptSurnameInput.style.display = "none";
+    surname.style.outline = "1px solid #EF5050";
+    isSurnameValid = false;
+  } else {
+    acceptSurnameInput.style.display = "block";
+    declineSurnameInput.style.display = "none";
+    surname.style.outline = "1px solid #98E37E";
+    isSurnameValid = true;
+  }
   // display email on resume
   emailInput.addEventListener("input", function () {
     localStorage.setItem("userEmail", emailInput.value);
@@ -99,19 +159,31 @@ if (location.pathname === "/redberry-project/personal-info.html") {
       declineEmailInput.style.display = "block";
       acceptEmailInput.style.display = "none";
       emailInput.style.outline = "1px solid #EF5050";
+      isEmailValid = false;
     } else {
       acceptEmailInput.style.display = "block";
       declineEmailInput.style.display = "none";
       emailInput.style.outline = "1px solid #98E37E";
+      isEmailValid = true;
     }
   });
-
+  if (!validateEmail(emailInput)) {
+    declineEmailInput.style.display = "block";
+    acceptEmailInput.style.display = "none";
+    emailInput.style.outline = "1px solid #EF5050";
+    isEmailValid = false;
+  } else {
+    acceptEmailInput.style.display = "block";
+    declineEmailInput.style.display = "none";
+    emailInput.style.outline = "1px solid #98E37E";
+    isEmailValid = true;
+  }
   // check if mobile number is valid and display it on resume
   mobileNumInput.addEventListener("input", function () {
     localStorage.setItem("mobileNumber", mobileNumInput.value);
     mobileNumberOutput.textContent = mobileNumInput.value;
     telephoneIcon.style.display = "block";
-    if (Number(mobileNumInput.value.length) === 0) {
+    if (mobileNumInput.value.length === 0) {
       telephoneIcon.style.display = "none";
     }
   });
@@ -121,18 +193,32 @@ if (location.pathname === "/redberry-project/personal-info.html") {
     telephoneIcon.style.display = "block";
   }
   mobileNumInput.addEventListener("input", function () {
-    console.log(mobileNumInput.value);
     if (this.value.length !== 13 || !this.value.startsWith("+995")) {
       declineNumberInput.style.display = "block";
       acceptNumberInput.style.display = "none";
       mobileNumInput.style.outline = "1px solid #EF5050";
+      isNumberValid = false;
     } else {
       declineNumberInput.style.display = "none";
       acceptNumberInput.style.display = "block";
       mobileNumInput.style.outline = "1px solid #98E37E";
+      isNumberValid = true;
     }
   });
-
+  if (
+    mobileNumInput.value.length !== 13 ||
+    !mobileNumInput.value.startsWith("+995")
+  ) {
+    declineNumberInput.style.display = "block";
+    acceptNumberInput.style.display = "none";
+    mobileNumInput.style.outline = "1px solid #EF5050";
+    isNumberValid = false;
+  } else {
+    declineNumberInput.style.display = "none";
+    acceptNumberInput.style.display = "block";
+    mobileNumInput.style.outline = "1px solid #98E37E";
+    isNumberValid = true;
+  }
   // function which displays info about user.
   const displayAboutPerson = function () {
     aboutPersonInput.addEventListener("input", function () {
@@ -163,10 +249,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
       }
     }
   };
-
-  displayInput(username, liveUsername, "Username");
-  displayInput(surname, surnameLive, "surname");
   displayAboutPerson();
+  if (isEmailValid && isNameValid && isNumberValid && isSurnameValid) {
+    nextPage.href = "experience.html";
+  } else {
+    nextPage.href = "#";
+  }
 } else if (location.pathname === "/redberry-project/experience.html") {
   // resume info variables
   const liveUsername = document.querySelector(".live-name");
@@ -195,9 +283,6 @@ if (location.pathname === "/redberry-project/personal-info.html") {
   const livePosition = document.querySelector(".position-live");
   const liveEmployer = document.querySelector(".employer-live");
   const liveDate = document.querySelector(".date-live");
-  const experienceDescriptionLive = document.querySelector(
-    ".experience-description-live"
-  );
   const describeEmployerAccept = document.querySelector(
     ".employer-accept-icon"
   );
@@ -210,6 +295,10 @@ if (location.pathname === "/redberry-project/personal-info.html") {
   const descriptionLive = document.querySelector(
     ".experience-description-live"
   );
+  //variables which checks user's inputs and if user can go on next page
+  let isPositionValid;
+  let isEmployerValid;
+  let isDateValid;
   //first input validation and live reload
   describePosition.addEventListener("input", function () {
     livePosition.textContent = describePosition.value;
@@ -228,10 +317,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
       describePositionDecline.style.display = "block";
       describePositionAccept.style.display = "none";
       describePosition.style.outline = "1px solid #EF5050";
+      isPositionValid = false;
     } else {
       describePositionDecline.style.display = "none";
       describePositionAccept.style.display = "block";
       describePosition.style.outline = "1px solid #98E37E";
+      isPositionValid = true;
     }
   });
   if (localStorage.getItem("Position")) {
@@ -243,10 +334,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
     describePositionDecline.style.display = "block";
     describePositionAccept.style.display = "none";
     describePosition.style.outline = "1px solid #EF5050";
+    isPositionValid = false;
   } else {
     describePositionDecline.style.display = "none";
     describePositionAccept.style.display = "block";
     describePosition.style.outline = "1px solid #98E37E";
+    isPositionValid = true;
   }
 
   //second input validation and live reload
@@ -267,10 +360,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
       describeEmployerDecline.style.display = "block";
       describeEmployerAccept.style.display = "none";
       employer.style.outline = "1px solid #EF5050";
+      isEmployerValid = false;
     } else {
       describeEmployerDecline.style.display = "none";
       describeEmployerAccept.style.display = "block";
       employer.style.outline = "1px solid #98E37E";
+      isEmployerValid = true;
     }
   });
   if (localStorage.getItem("Employer")) {
@@ -282,10 +377,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
     describeEmployerDecline.style.display = "block";
     describeEmployerAccept.style.display = "none";
     employer.style.outline = "1px solid #EF5050";
+    isEmployerValid = false;
   } else {
     describeEmployerDecline.style.display = "none";
     describeEmployerAccept.style.display = "block";
     employer.style.outline = "1px solid #98E37E";
+    isEmployerValid = true;
   }
   // date
   let startdatetemp;
@@ -293,10 +390,29 @@ if (location.pathname === "/redberry-project/personal-info.html") {
     liveDate.textContent = startDate.value;
     startdatetemp = startDate.value;
     localStorage.setItem("startDate", startdatetemp);
+    if (startDate.value > endDate.value) {
+      nextPageLink.href = "javascript:location.reload()";
+      startDate.style.outline = "1px solid #EF5050";
+      endDate.style.outline = "1px solid #EF5050";
+    } else {
+      nextPageLink.href = "education.html";
+      startDate.style.outline = "1px solid #98E37E";
+      endDate.style.outline = "1px solid #98E37E";
+    }
+    console.log(isDateValid);
   });
   endDate.addEventListener("input", function () {
     localStorage.setItem("endDate", endDate.value);
     liveDate.textContent = `${startDate.value} - ${endDate.value}`;
+    if (startDate.value > endDate.value) {
+      startDate.style.outline = "1px solid #EF5050";
+      endDate.style.outline = "1px solid #EF5050";
+      nextPageLink.href = "javascript:location.reload()";
+    } else {
+      startDate.style.outline = "1px solid #98E37E";
+      endDate.style.outline = "1px solid #98E37E";
+      nextPageLink.href = "education.html";
+    }
   });
   if (localStorage.getItem("startDate")) {
     startDate.value = localStorage.getItem("startDate");
@@ -309,11 +425,12 @@ if (location.pathname === "/redberry-project/personal-info.html") {
   if (startDate.value > endDate.value) {
     startDate.style.outline = "1px solid #EF5050";
     endDate.style.outline = "1px solid #EF5050";
+    isDateValid = false;
   } else {
     startDate.style.outline = "1px solid #98E37E";
     endDate.style.outline = "1px solid #98E37E";
+    isDateValid = true;
   }
-  //
   descriptionInput.addEventListener("input", function () {
     localStorage.setItem("experienceDescription", descriptionInput.value);
     descriptionLive.textContent = descriptionInput.value;
@@ -341,4 +458,10 @@ if (location.pathname === "/redberry-project/personal-info.html") {
   telephoneIcon.style.display = "block";
   emailOutput.textContent = localStorage.getItem("userEmail");
   emailIcon.style.display = "block";
+  const nextPageLink = document.querySelector(".next-page-link");
+  if (isDateValid && isEmployerValid && isPositionValid) {
+    nextPageLink.href = "education.html";
+  } else {
+    nextPageLink.href = "#";
+  }
 }

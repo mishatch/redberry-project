@@ -359,6 +359,9 @@ input[type="file"] {
 
   color: #ffffff;
 }
+.next-page-btn:hover {
+  cursor: pointer;
+}
 .next-page {
   margin-left: auto;
   margin-right: 150px;
