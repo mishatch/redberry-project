@@ -10,7 +10,7 @@
   <body>
     <section class="experience-input">
       <div class="header">
-        <a href="index.html" class="vector-link"
+        <a href="index.html" class="vector-link" onclick="localStorage.clear()"
           ><img src="images/Vector.png" alt="Go to start page" class="vector"
         /></a>
         <h1 class="experience-information">გამოცდილება</h1>
@@ -77,19 +77,23 @@
           <input
             type="text"
             class="description-input"
+            id="description-input-id"
             placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
           />
         </form>
-        <hr class="experience-input-line" />
       </div>
+      <hr class="experience-input-line" />
       <button class="add-experience">მეტი გამოცდილების დამატება</button>
       <div class="navigation-buttons">
-        <a href="personal-info.html" class="back-link"
-          ><button class="back">უკან</button></a
+        <button
+          class="back"
+          onclick="window.location.href='personal-info.html'"
         >
-        <a href="education.html" class="next-page-link"
-          ><button class="next">შემდეგი</button></a
-        >
+          უკან
+        </button>
+        <button class="next" onclick="window.location.href='education.html'">
+          შემდეგი
+        </button>
       </div>
     </section>
     <section class="live-reload">
@@ -124,8 +128,8 @@
           <p class="position-live"></p>
           <p class="employer-live"></p>
         </div>
-        <p class="date-live"></p>
-        <p class="experience-description-live"></p>
+        <p class="date-live" id="dateId"></p>
+        <p class="experience-description-live" id="descriptionId"></p>
       </div>
     </section>
     <script src="script.js"></script>

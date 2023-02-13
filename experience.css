@@ -13,7 +13,6 @@ body {
 .experience-input {
   width: 1098px;
   background: whitesmoke;
-  height: 100vh;
 }
 .about-person {
   margin-left: 80px;
@@ -324,12 +323,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-top: 77px;
 }
 .experience-form {
   display: flex;
   flex-direction: column;
-  margin-left: 150px;
 }
 .position-label {
   font-family: "Helvetica Neue";
@@ -437,10 +434,6 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
-  /* identical to box height, or 131% */
-
-  display: flex;
-  align-items: center;
 
   color: #000000;
 }
@@ -529,6 +522,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 115px;
+  margin-bottom: 65px;
 }
 .back,
 .next {
@@ -615,4 +609,110 @@ body {
   text-transform: capitalize;
 
   color: #000000;
+}
+form > label {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+form > input {
+  box-sizing: border-box;
+  margin-top: 8px;
+  width: 798px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.working-date > div > input {
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 371px;
+  height: 48px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+form {
+  margin-left: 150px;
+  margin-top: 77px;
+}
+.experience-live > p {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  /* off black */
+
+  color: #1a1a1a;
+}
+#dateId {
+  margin-top: 7px;
+  font-family: "Helvetica Neue";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #919191;
+}
+#descriptionId {
+  margin-top: 16px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 138% */
+
+  text-transform: capitalize;
+
+  color: #000000;
+}
+#description-input-id {
+  box-sizing: border-box;
+
+  width: 798px;
+  height: 123px;
+
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 16px;
+  padding-bottom: 90px;
 }
